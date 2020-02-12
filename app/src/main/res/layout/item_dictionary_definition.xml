@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="definition"
+            type="com.nike.coding.dictionary.network.model.Definition" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/repo_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@{definition.word}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="query" />
+
+            <TextView
+                android:id="@+id/repo_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@{definition.definition}"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toStartOf="@id/guide_line"
+                app:layout_constraintStart_toStartOf="@+id/repo_name"
+                app:layout_constraintTop_toBottomOf="@id/repo_name"
+                tools:text="definition of a word" />
+
+            <ImageView
+                android:id="@+id/thumbs_up"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_thumb_up_black_24dp"
+                app:layout_constraintStart_toStartOf="@+id/repo_name"
+                app:layout_constraintTop_toBottomOf="@id/repo_description" />
+
+            <TextView
+                android:id="@+id/thumbs_up_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="16dp"
+                android:text="@{String.valueOf(definition.thumbs_up)}"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:layout_constraintStart_toEndOf="@id/thumbs_up"
+                app:layout_constraintTop_toBottomOf="@id/repo_description"
+                tools:text="234" />
+
+            <ImageView
+                android:id="@+id/thumbs_down"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_thumb_down_black_24dp"
+                app:layout_constraintStart_toEndOf="@id/thumbs_up_count"
+                app:layout_constraintTop_toBottomOf="@id/repo_description" />
+
+            <TextView
+                android:id="@+id/thumbs_down_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="16dp"
+                android:text="@{String.valueOf(definition.thumbs_down)}"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:layout_constraintStart_toEndOf="@id/thumbs_down"
+                app:layout_constraintTop_toBottomOf="@id/repo_description"
+                tools:text="1234" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{definition.author}"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/repo_description"
+                tools:text="Author" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

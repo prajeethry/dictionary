@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+    <string name="enter_org_name_text">Enter Organization name:</string>
+    <string name="search_org_name_hint">Search Organization Repositories</string>
+    <string name="search_button_text">Search</string>
+    <string name="no_repo_found_error">No repository found. Please try with different Org name.</string>
+    <string name="type_some_text">Type a word</string>
+    <string name="sort_by_thumbs_up">sort by thumbs up</string>
+    <string name="sort_by_thumbs_down">sort by thumbs down</string>
+</resources>
